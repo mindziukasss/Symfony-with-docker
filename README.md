@@ -1,3 +1,5 @@
+git clone https://github.com/mindziukasss/Symfony-with-docker.git .
+
 # Docker Symfony (php7.4 - nginx - mysql8 - elk - node)
 Docker-symfony gives you everything you need for developing Symfony application.
 This complete stack run with docker and [docker-compose](https://docs.docker.com/compose/).
