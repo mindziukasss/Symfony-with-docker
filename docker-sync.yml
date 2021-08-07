@@ -1,0 +1,5 @@
+version: '3'
+syncs:
+  app-sync:
+    src: ${SYMFONY_APP_PATH}
+    sync_excludes: ['.data/']
