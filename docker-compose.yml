@@ -12,7 +12,7 @@ services:
         ports:
             - ${LOCAL_NGINX_PORT}:80
         volumes:
-            - ./app:/var/www/project
+            - ${SYMFONY_APP_PATH}:/var/www/project
             - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
             - ./logs/nginx/:/var/log/nginx
         depends_on:
@@ -33,7 +33,6 @@ services:
             - ${LOCAL_PHP_PORT}:9000
         volumes:
             - ${SYMFONY_APP_PATH}:/var/www/project
-            - ./logs/app:/var/www/project/var/logs
             - ./key/ssh/id_rsa:/root/.ssh/id_rsa:ro
         networks:
             - nginx-php74-mysql8-node-elk
@@ -63,7 +62,7 @@ services:
         image: node:latest
         container_name: node-container
         volumes:
-            - ./app:/var/www/project
+            - ${SYMFONY_APP_PATH}:/var/www/project
         working_dir: /var/www/project
         networks:
             - nginx-php74-mysql8-node-elk

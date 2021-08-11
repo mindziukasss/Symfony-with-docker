@@ -14,7 +14,17 @@ This complete stack run with docker and [docker-compose](https://docs.docker.com
     ```bash
     $ ./start-dev.sh
     ```
-3. Prepare Symfony app
+   
+3. Create Symfony app
+   ```bash
+   # run this if you are building a traditional web application
+   $ composer create-project symfony/website-skeleton my_project_name
+   
+   or
+   # run this if you are building a microservice, console application or API
+   $ composer create-project symfony/skeleton my_project_name
+   ```
+4.Prepare Symfony app
    1. Composer install & create database
 
        ```bash
@@ -26,13 +36,13 @@ This complete stack run with docker and [docker-compose](https://docs.docker.com
        # Only if you have `doctrine/doctrine-fixtures-bundle` installed
        $ sf doctrine:fixtures:load --no-interaction
        ```
-4. Create db phpStorm
-   ```bash
-      Name: localhoast
-      General -> Tab
-      Host: localhost Port:{LOCAL_MYSQL_PORT}
-      User: {MYSQL_USER}
-      Password:{MYSQL_PASSWORD}
-      Database: MYSQL_DATABASE
-   ```
+   2. Create db phpStorm
+      ```bash
+         Name: localhoast
+         General -> Tab
+         Host: localhost Port:{LOCAL_MYSQL_PORT}
+         User: {MYSQL_USER}
+         Password:{MYSQL_PASSWORD}
+         Database: MYSQL_DATABASE
+      ```
    
